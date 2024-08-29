@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 16:01:22 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/08/28 18:56:26 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/08/29 20:20:18 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/08/29 20:22:15 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
 #include <iostream>
 
-#include <standard>
-
-int main(int ac, char **av)
-{
-	if (ac == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-		return (1);
-	}
-	for (int j = 1; j < ac; j++)
-		for (int i = 0; av[j][i]; i++)
-			putchar(toupper(av[j][i]));
-	std::cout << '\n';
-}
+#endif
