@@ -2,12 +2,19 @@ Name = megaphone
 
 CFILS = megaphone.cpp
 
-CFLAGS =  -Wall -Wextra -Werror -std=c++98
+CPPFLAGS =  -Wall -Wextra -Werror -std=c++98
 
-all:
-	c++ $(CFLAGS) $(CFILS) -o $(Name)
+OBJS = $(CFILS:.cpp=.o)
+
+all: $(Name)
+
+$(Name): $(OBJS)
+	c++ $(CFLAGS) $(OBJS) -o $(Name)
 
 clean:
+	rm -rf $(OBJS)
+
+fclean: clean
 	rm -rf $(Name)
 
 re: all

@@ -1,13 +1,21 @@
 Name = phonebook
 
-CLFAGS = -Wall -Wextra -Werror -std=c++98
+CLFAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
 
 CFILES = main.cpp Contact.cpp  PhoneBook.cpp
 
-all:
-	c++ $(CLFAGS) $(CFILES) -o $(Name)
+OBJS = $(CFILES:.cpp=.o)
+
+
+
+all: $(OBJS)
+	c++ $(CLFAGS) $(OBJS) -o $(Name)
+
 
 clean:
 	rm -rf $(Name)
+
+fclean: clean
+	rm -rf $(OBJS)
 
 re: clean all
