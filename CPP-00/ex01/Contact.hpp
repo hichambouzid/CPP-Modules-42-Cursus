@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 20:20:18 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/10 17:13:20 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/10 18:53:29 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ private:
 public:
 	Contact();
 	int	add_if_valid_contact(int index);
+	int check_index(void);
+	void display_content();
+	// int handel_erros(std::string input);
+
 };
 
 #endif

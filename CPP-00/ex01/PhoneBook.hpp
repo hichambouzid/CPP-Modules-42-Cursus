@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 20:21:01 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/10 17:09:26 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/10 18:30:00 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ public:
 	std::string search;
 	std::string exit;
 	void add_new_contact();
+	void search_contact();
+	int handel_erros(std::string input);
+	int search_and_display(int index_number);
+
 };
 
 #endif

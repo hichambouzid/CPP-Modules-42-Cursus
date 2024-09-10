@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:01:22 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/09 13:14:03 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/11 00:02:34 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 int main(int ac, char **av)
 {
-	// int f;
 	if (ac == 1)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
