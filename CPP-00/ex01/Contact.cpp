@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:58:57 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/11 00:40:55 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:22:17 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 Contact::Contact()
 {
-	std::cout << "im in contact class\n";
+	// std::cout << "im in contact class\n";
 	Contact::data_user[0] = "First	name: ";
 	Contact::data_user[1] = "Last	 name: ";
 	Contact::data_user[2] = "Nick	 name: ";
@@ -34,12 +34,15 @@ int	Contact::add_if_valid_contact(int index)
 	int flag;
 	
 	flag = 1;
+	// std::getline(std::cin, input);
 	for (int i = 0; i < 5; i++)
 	{
 		std::cout << this->data_user[i];
 		std::getline(std::cin, input);
 		if (input.empty())
 		flag = 0;
+		if (std::cin.eof())
+			return (0);
 		this->data_user[i] += input;
 	}
 	if (flag)
