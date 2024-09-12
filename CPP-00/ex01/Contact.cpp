@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:58:57 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/11 16:22:17 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/12 02:06:24 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,17 @@
 
 Contact::Contact()
 {
+	std::cout << "im in contact class\n";
+	Contact::data_user[0] = "First	name: ";
+	Contact::data_user[1] = "Last	 name: ";
+	Contact::data_user[2] = "Nick	 name: ";
+	Contact::data_user[3] = "Phone 	number: ";
+	Contact::data_user[4] = "Secret : ";
+	n_index = -1;
+}
+
+void Contact::rebase_Contact()
+{
 	// std::cout << "im in contact class\n";
 	Contact::data_user[0] = "First	name: ";
 	Contact::data_user[1] = "Last	 name: ";
@@ -26,6 +37,15 @@ Contact::Contact()
 	Contact::data_user[3] = "Phone 	number: ";
 	Contact::data_user[4] = "Secret : ";
 	n_index = -1;
+}
+int ft_isprintable(std::string str)
+{
+	for (int i = 0; str[i]; i++)
+	{
+		if (!std::isprint(str[i]))
+			return (0);
+	}
+	return (1);
 }
 
 int	Contact::add_if_valid_contact(int index)
@@ -39,11 +59,12 @@ int	Contact::add_if_valid_contact(int index)
 	{
 		std::cout << this->data_user[i];
 		std::getline(std::cin, input);
-		if (input.empty())
+		if (input.empty() || !ft_isprintable(input))
 		flag = 0;
 		if (std::cin.eof())
 			return (0);
-		this->data_user[i] += input;
+		if (flag)
+			this->data_user[i] += input;
 	}
 	if (flag)
 	{
@@ -51,7 +72,7 @@ int	Contact::add_if_valid_contact(int index)
 		std::cout << "-----> Has been added successfully <------\n";
 		return (flag);
 	}
-	Contact();
+	rebase_Contact();
 	return (flag);
 }
 
@@ -93,20 +114,3 @@ void Contact::display_content()
 	}
 	std::cout << std::endl;
 }
-
-// void Contact::reconfig_the_object()
-// {
-// 	Contact();
-// }
-// void Contact::add_contact(Contact::string data_user[5])
-// {
-// 	int index;
-	
-// 	index = 0;
-// 	while (index < 5)
-// 	{
-// 		std::cout << data_user[index];
-// 	}
-// }
-
-// void Cona

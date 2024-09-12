@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 20:09:55 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/11 16:29:59 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/12 01:53:15 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,9 @@ int  main()
 			phonebook.add_new_contact();
 		else if (!phonebook.search.compare(name))
 			phonebook.search_contact();
-		else if (!phonebook.exit.compare(name))
-			exit(0);
-		if (handel_getline(std::cin))
+
+		if (!phonebook.exit.compare(name) ||
+			handel_getline(std::cin))
 			break ;
-		if (name.empty())
-			std::cout << "$$$$$$$ hello i'm null $$$$$$$\n";
 	}
 }

@@ -2,3 +2,5 @@ in ex01 check the input of the user if valide
 if yes continue else reconfig the object.
 
 add search  function that respect the rules gived in the exiercise
+change stoi to ss by using string stream object
+solve ex02 && clean code of ex01

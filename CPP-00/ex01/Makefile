@@ -2,11 +2,11 @@ Name = phonebook
 
 CFILS = main.cpp Contact.cpp  PhoneBook.cpp
 
+CXX = c++
+
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJS = $(CFILS:.cpp=.o)
-
-
 
 all: $(Name)
 
@@ -19,4 +19,4 @@ clean:
 fclean: clean
 	rm -rf $(OBJS)
 
-re: clean all
+re: fclean all

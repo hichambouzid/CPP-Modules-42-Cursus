@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 20:21:01 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/10 18:30:00 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/12 02:04:55 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <cctype>
+// #include <string.h>
+#include <cstdlib>
 #include "Contact.hpp"
 
 class PhoneBook{
@@ -31,6 +35,7 @@ public:
 	void search_contact();
 	int handel_erros(std::string input);
 	int search_and_display(int index_number);
+	
 
 };
 

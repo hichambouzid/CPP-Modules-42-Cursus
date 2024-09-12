@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:09:42 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/11 00:39:11 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/12 02:12:05 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int PhoneBook::handel_erros(std::string input)
 	}
 	try
 	{
-		 if (std::stoi(input) > 8 || std::stoi(input) < 0)
+		 if (atoi(input.c_str()) > 8 || atoi(input.c_str()) < 0)
 		{
 			std::cout << "The index is out of range .\n";
 			return (-1);
@@ -61,8 +61,7 @@ int PhoneBook::handel_erros(std::string input)
 		return (-1);
 	}
 	
-	// std::cout << "error \n";
-	return (std::stoi(input));
+	return (atoi(input.c_str()));
 }
 
 
@@ -72,7 +71,7 @@ int PhoneBook::search_and_display(int index_number)
 
 	number_ret = contact[index_number].check_index(); 
 	if (number_ret == -1)
-		std::cout << "check check i'm here\n";
+		std::cout << "Not found\n";
 	else
 	{
 		contact[index_number].display_content();
@@ -85,6 +84,7 @@ void PhoneBook::search_contact()
 	std::string input;
 	int index_number;
 
+	index_number = 0;
 	if (index == 0 || numberofusers == 0)
 	{
 		std::cout << "-----> The phone book is empty !!! <-----\n";
@@ -98,9 +98,9 @@ void PhoneBook::search_contact()
 	while (1)
 	{
 		std::getline(std::cin, input);
-		index_number = handel_erros(input);
-		if (index_number == -1)
+		if (input.length() != 1 || !std::isdigit(input[0]))
 			break ;
+		index_number = input[0] - 48;
 		search_and_display(index_number);
 	}	
 }
