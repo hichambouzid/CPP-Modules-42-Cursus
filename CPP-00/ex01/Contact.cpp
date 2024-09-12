@@ -6,20 +6,15 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:58:57 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/12 02:06:24 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/12 17:37:32 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-//  Phonebook()
-// {
-// 	std::cout << "hello mother fucker";
-// }
 
 Contact::Contact()
 {
-	std::cout << "im in contact class\n";
 	Contact::data_user[0] = "First	name: ";
 	Contact::data_user[1] = "Last	 name: ";
 	Contact::data_user[2] = "Nick	 name: ";
@@ -30,7 +25,6 @@ Contact::Contact()
 
 void Contact::rebase_Contact()
 {
-	// std::cout << "im in contact class\n";
 	Contact::data_user[0] = "First	name: ";
 	Contact::data_user[1] = "Last	 name: ";
 	Contact::data_user[2] = "Nick	 name: ";
@@ -38,6 +32,7 @@ void Contact::rebase_Contact()
 	Contact::data_user[4] = "Secret : ";
 	n_index = -1;
 }
+
 int ft_isprintable(std::string str)
 {
 	for (int i = 0; str[i]; i++)
@@ -52,19 +47,20 @@ int	Contact::add_if_valid_contact(int index)
 {
 	std::string input;
 	int flag;
+	char *checker;
 	
 	flag = 1;
-	// std::getline(std::cin, input);
 	for (int i = 0; i < 5; i++)
 	{
 		std::cout << this->data_user[i];
 		std::getline(std::cin, input);
-		if (input.empty() || !ft_isprintable(input))
+		if (input.empty() || !ft_isprintable(input) || (i == 4 && *checker))
 		flag = 0;
 		if (std::cin.eof())
 			return (0);
-		if (flag)
-			this->data_user[i] += input;
+		if (i == 3)
+			strtol(input.c_str(), &checker, 10);
+		this->data_user[i] += input;
 	}
 	if (flag)
 	{
@@ -88,8 +84,8 @@ void help_to_display(std::string data, int len)
 {
 	if (len < 10)
 	{
-		for (int i = 0; i < 10 - len; i++)
-			std::cout << " ";
+		// for (int i = 0; i < 10 - len; i++)
+			std::cout << std::setw(10 - len) << ' ';
 		std::cout << data;
 		return ;
 	}
@@ -112,5 +108,4 @@ void Contact::display_content()
 		if (i != 2)
 			std::cout << "|";
 	}
-	std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 20:09:55 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/12 01:53:15 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/12 17:49:17 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int  main()
 	std::string		name;
 	PhoneBook	phonebook;
 
+	std::cout << std::setw(40) << ' ' << "Hello in 80s tech NOTE !!! The only command available is ADD SEARCH EXIT \n";
 	while (1)
 	{
 		std::getline(std::cin, name);

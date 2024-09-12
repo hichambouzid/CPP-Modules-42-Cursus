@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:09:42 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/12 02:12:05 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/12 17:10:45 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int PhoneBook::search_and_display(int index_number)
 	else
 	{
 		contact[index_number].display_content();
+		std::cout << '\n';
 	}
 	return (number_ret);
 }
@@ -97,9 +98,13 @@ void PhoneBook::search_contact()
 	}
 	while (1)
 	{
+		std::cout << "try to search to another user: ";
 		std::getline(std::cin, input);
 		if (input.length() != 1 || !std::isdigit(input[0]))
-			break ;
+		{
+			std::cout << "Bad input Back to main program ADD SEARCH & EXIT!\n";
+				break ;
+		}
 		index_number = input[0] - 48;
 		search_and_display(index_number);
 	}	
