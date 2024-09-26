@@ -4,3 +4,8 @@ if yes continue else reconfig the object.
 add search  function that respect the rules gived in the exiercise
 change stoi to ss by using string stream object
 solve ex02 && clean code of ex01
+
+
+display the status depanding on '_accountIndex' (displayStatus( void ) const)
+add destructor ~Account
+ 
