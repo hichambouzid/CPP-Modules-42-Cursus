@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:48:01 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/30 11:50:57 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/09/30 16:44:24 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,14 @@
 #include <iostream>
 
 class Zombie{
-	private:
-		std::string name;
-	public:
-		void announce (void) ;
+private:
+	std::string name;
+public:
+	Zombie(std::string name);
+	~Zombie(void);
+	void announce (void) ;
+	static Zombie* newZombie( std::string name );
+	void randomChump( std::string name );
+	
 };
 #endif
