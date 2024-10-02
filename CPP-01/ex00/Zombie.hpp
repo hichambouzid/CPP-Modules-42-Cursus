@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:48:01 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/02 00:43:22 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:45:38 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ public:
 	Zombie(std::string name);
 	~Zombie(void);
 	void announce (void) ;
-	static Zombie* newZombie( std::string name );
-	static void randomChump( std::string name );
-	
+
 };
+
+void randomChump( std::string name );
+Zombie* newZombie( std::string name );
+
 #endif
