@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 11:48:01 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/30 16:44:24 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/10/02 00:51:51 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/10/02 01:30:18 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ class Zombie{
 private:
 	std::string name;
 public:
-	Zombie(std::string name);
-	~Zombie(void);
+	Zombie();
+	~Zombie();
 	void announce (void) ;
-	static Zombie* newZombie( std::string name );
-	void randomChump( std::string name );
-	
+			
 };
+Zombie* zombieHorde( int N, std::string name );
+
 #endif

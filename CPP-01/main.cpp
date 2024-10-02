@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:47:04 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/09/30 16:57:09 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/10/02 01:14:04 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/10/02 01:28:16 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 int main()
 {
-	std::string name1 = "cha3kouk";
-	std::string name2 = "cha3kouk loux";
-	Zombie zombie1(name1);
-	Zombie* zombie2 =  Zombie::newZombie(name2); 
-	delete zombie2;
-	// zombie1 = newZombie 		
+	// int i = 0;
+	Zombie *zombozo = Zombie::zombieHorde(4, "tetouuani massoni");
+	// for (int i = 0; i < 4 ; i++)
+		delete []zombozo;
 }

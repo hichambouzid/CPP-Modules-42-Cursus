@@ -1,14 +1,14 @@
-Name = zombiehorde
+Name = Zombie
 
 CPP = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CPPFILES = main.cpp ZombieHorde.cpp Zombie.cpp
+CPPFILES = Zombie.cpp      main.cpp        newZombie.cpp   randomChump.cpp
 
 OBJS = $(CPPFILES:.cpp=.o)
 
-all: $(Name)
+all : $(Name)
 
 $(Name) : $(OBJS)
 	$(CPP) $(CPPFLAGS) $(OBJS) -o $(Name)
@@ -19,4 +19,4 @@ clean:
 fclean: clean
 	rm -rf $(Name)
 
-re: fclean all
+re : fclean all

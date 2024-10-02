@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 00:55:48 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/02 01:11:00 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/09/30 15:47:04 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/10/02 00:42:52 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void Zombie::announce (void)
+int main()
 {
-	std::cout <<  name << " : BraiiiiiiinnnzzzZ...\n";
-}
-
-Zombie::Zombie()
-{
-	// this->name = name;
-	std::cout << "The Zombie name: was created\n";
-}
-
-Zombie::~Zombie()
-{
-	std::cout << "The zombie named: " << name << "was deleted\n";
+	std::string name1 = "cha3kouk";
+	std::string name2 = "cha3kouk loux";
+	std::string name3 = "hetchmaaan";
+	Zombie zombie1(name1);
+	Zombie* zombie2 =  Zombie::newZombie(name2);
+	Zombie::randomChump(name3);
+	delete zombie2;
+	// zombie1 = newZombie 		
 }
