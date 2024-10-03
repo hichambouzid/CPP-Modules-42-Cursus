@@ -9,3 +9,4 @@ solve ex02 && clean code of ex01
 display the status depanding on '_accountIndex' (displayStatus( void ) const)
 add destructor ~Account
  
+fix ex01 and follow constructors.
