@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 01:14:04 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/02 16:03:00 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:07:39 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,3 +19,4 @@ int main()
 		zombozo[i].announce();
 	delete []zombozo;
 }
+
