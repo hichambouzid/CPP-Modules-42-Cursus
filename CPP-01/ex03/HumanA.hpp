@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:26:16 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/04 15:51:26 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:09:09 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class HumanA{
 		Weapon &fire;
 	public:
 		HumanA(std::string name, Weapon &param);
+		~HumanA();
 		void attack(void);
 };
 
