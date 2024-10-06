@@ -10,3 +10,8 @@ display the status depanding on '_accountIndex' (displayStatus( void ) const)
 add destructor ~Account
  
 fix ex01 and follow constructors.
+
+understand more ex03 and impliment requirement.
+
+
+fix  pointer to function an use switch case

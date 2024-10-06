@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 16:15:27 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/06 17:12:12 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/06 17:19:15 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int main()
 {
 	Harl harly;
-	harly.complain("DEBUG");
+	harly.complain("");
 }
