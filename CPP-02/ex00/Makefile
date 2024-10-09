@@ -13,6 +13,5 @@ all:
 clean:
 	rm -rf $(Name)
 
-clean:
+fclean:
 	rm -rf $(Name)
-
