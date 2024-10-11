@@ -14,3 +14,5 @@ clear:
 
 fclean:
 	rm -rf $(Name)
+
+re: fclean all
