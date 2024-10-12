@@ -6,15 +6,20 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 19:39:07 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/11 12:49:19 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/12 12:00:14 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+Fixed::Fixed()
+{
+	this->number = 0;
+}
+
 Fixed::Fixed(const int number)
 {
-	this->number = (number * (1 << 8));
+	this->number = number;
 }
 
 Fixed::Fixed(const float number)
@@ -64,7 +69,7 @@ Fixed Fixed::operator-(const Fixed& Fixed1) const
 
 Fixed Fixed::operator*(const Fixed& Fixed1) const
 {
-	return (Fixed((this->number * Fixed1.number) / (1 << 8)));
+	return (Fixed((float)(this->number * Fixed1.number )/ (1 << 8)));
 }
 
 Fixed Fixed::operator/(const Fixed& Fixed1) const
@@ -101,11 +106,43 @@ Fixed Fixed::operator--()
 
 float Fixed::toFloat( void ) const
 {
-	return ((this->number / 1 << 8));
+	return (((float)this->number / (1 << 8)));
 }
 
 std::ostream& operator<<(std::ostream &os, const Fixed& copy_fixed)
 {	
 	os <<  copy_fixed.toFloat();
+	// std::cout << "i'm here\n";
 	return (os);
 }
+
+Fixed& Fixed::min(Fixed& fixed1, Fixed& fixed2)
+{
+	if (fixed1.number < fixed2.number)
+		return (fixed1);
+	return (fixed2);
+}
+
+const Fixed& Fixed::min(const Fixed& fixed1, const Fixed& fixed2)
+{
+	if (fixed1.number < fixed2.number)
+			return (fixed1);
+	return (fixed2);
+
+}
+
+Fixed& Fixed::max(Fixed& fixed1, Fixed& fixed2)
+{
+	if (fixed1.number < fixed2.number)
+		return (fixed2);
+	return (fixed1);
+}
+
+const Fixed& Fixed::max(const Fixed& fixed1, const Fixed& fixed2)
+{
+	if (fixed1.number < fixed2.number)
+		return (fixed2);
+	return (fixed1);
+
+}
+
