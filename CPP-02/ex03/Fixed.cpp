@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 19:39:07 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/15 00:09:01 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/15 16:36:35 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Fixed::Fixed()
 
 Fixed::Fixed(const int number)
 {
-	this->number = number;
+	this->number = number * (1 << 8);
 }
 
 Fixed::Fixed(const float number)

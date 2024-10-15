@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:20:12 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/15 00:07:39 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/15 16:54:21 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 Point::Point() : x(0), y(0)
 {
-	//std::cout << "Default constructor called\n";
+	std::cout << "Default constructor called\n";
 }
 
 Point::Point(float v_x, float v_y) : x(v_x), y(v_y)
 {
-	//std::cout << "parametrized constructor called & using initialization list\n";
+	// std::cout << "parametrized constructor called & using initialization list\n";
 }
 
-Point::Point(const Point& copy_point)
+Point::Point(const Point& copy_point) : x(copy_point.x), y(copy_point.y)
 {
 	//std::cout << "copy constructor called\n";
 	*this = copy_point;
@@ -38,14 +38,16 @@ Point& Point::operator=(const Point &copy_point)
 	return (*this);
 }
 
-int Point::get_x() const
+float Point::get_x() const
 {
-	return (x.toInt());
+	// printf("here %f\n", this->x.toFloat());
+	return (this->x.toFloat());
 }
 
-int Point::get_y() const
+float Point::get_y() const
 {
-	return (y.toInt());	
+	// std::cout << "-------->" << y << '\n';
+	return (y.toFloat());	
 }
 
 Point::~Point()
