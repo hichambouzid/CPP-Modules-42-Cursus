@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:29:21 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/13 15:10:08 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/14 23:33:10 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class Fixed{
 	Fixed operator--();
 	
 	float toFloat( void ) const;
+	int toInt( void ) const;
 
 	static Fixed& min(Fixed& fixed1, Fixed& fixed2);
 	static const Fixed& min(const Fixed& fixed1, const Fixed& fixed2);

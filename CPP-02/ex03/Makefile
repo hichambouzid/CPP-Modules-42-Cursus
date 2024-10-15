@@ -1,11 +1,10 @@
-Name = program_02
+Name = program_03
 
 CXX = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CPPFILS = Fixed.cpp main.cpp 
-
+CPPFILS = Fixed.cpp  Point.cpp  bsp.cpp   main.cpp
 
 all:
 	$(CXX) $(CPPFLAGS) $(CPPFILS) -o $(Name)
@@ -13,7 +12,6 @@ all:
 clean:
 	rm -rf $(Name)
 
-fclean:
-	rm -rf $(Name)
+fclean: clean
 
-re: all
+re : fclean all

@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 19:39:07 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/13 15:11:00 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/15 00:09:01 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Fixed::Fixed()
 {
-	std::cout << "An object was created\n";
+	// std::cout << "An object was created\n";
 	this->number = 0;
 }
 
@@ -146,8 +146,12 @@ const Fixed& Fixed::max(const Fixed& fixed1, const Fixed& fixed2)
 
 }
 
+int Fixed::toInt( void ) const
+{
+	return (this->number / (1 << 8));
+}
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called\n";
+	// std::cout << "Destructor called\n";
 }
