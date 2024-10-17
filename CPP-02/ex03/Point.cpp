@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:20:12 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/15 16:54:21 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/15 17:05:42 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ Point::Point() : x(0), y(0)
 
 Point::Point(float v_x, float v_y) : x(v_x), y(v_y)
 {
-	// std::cout << "parametrized constructor called & using initialization list\n";
+	std::cout << "parametrized constructor called & using initialization list\n";
 }
 
 Point::Point(const Point& copy_point) : x(copy_point.x), y(copy_point.y)
 {
-	//std::cout << "copy constructor called\n";
+	std::cout << "copy constructor called\n";
 	*this = copy_point;
 }
 
