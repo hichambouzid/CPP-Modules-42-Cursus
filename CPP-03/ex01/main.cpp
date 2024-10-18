@@ -6,16 +6,16 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 21:52:23 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/18 17:13:41 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:15:08 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap robot_rr("Agent");
-	robot_rr.attack("Manager");
-	robot_rr.takeDamage(5);
-	robot_rr.beRepaired(9);
+	ScavTrap ScavTrap1("Tester");
+	ScavTrap1.attack("Devloper");
+	ScavTrap1.takeDamage(2);
+	ScavTrap1.guardGate();
 }

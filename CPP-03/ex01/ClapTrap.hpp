@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 21:40:59 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/18 16:51:32 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/18 16:53:07 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 
 class  ClapTrap{
+	protected:
 	std::string Name;
 	int Hit_Points;
 	int Enrgy_Points;
