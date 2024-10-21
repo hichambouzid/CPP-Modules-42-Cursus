@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:23:12 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/21 15:29:42 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:10:04 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Dog::Dog(const Dog& copy_dog)
 	this->type = copy_dog.type;
 }
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
 	std::cout << "Dog name: " << this->type << " makes sound\n";
 }

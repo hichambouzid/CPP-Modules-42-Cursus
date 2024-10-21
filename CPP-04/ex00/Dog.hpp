@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 14:29:08 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/21 15:27:19 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:08:27 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Dog : public Animal{
 	Dog();
 	Dog(std::string name);
 	Dog(const Dog& copy_dog);
-	void makeSound();
+	void makeSound() const;
 	~Dog();
 };
 
