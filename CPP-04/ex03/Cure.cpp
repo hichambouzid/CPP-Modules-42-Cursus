@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 14:27:06 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/22 15:55:47 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/10/22 19:10:58 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/10/22 19:29:11 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "Cure.hpp"
 
-#include <iostream>
+Cure::Cure(): AMateria("cure")
+{
+	std::cout << "Default constructor of cure called\n";	
+}
 
-class Animal{
-	protected:
-		std::string type;
-	public:
-		Animal();
-		Animal(std::string name);
-		Animal(const Animal& copy_animal);
-		virtual void makeSound() const;
-		std::string getType() const;
-		virtual ~Animal();
-};
-
-#endif
+Cure& Cure::clone()
+{
+	return (new Cure);
+}

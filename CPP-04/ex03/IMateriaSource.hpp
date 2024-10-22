@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 14:27:06 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/22 15:55:47 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/10/22 17:34:49 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/10/22 17:36:14 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
-#include <iostream>
+#include "AMateria.hpp"
 
-class Animal{
-	protected:
-		std::string type;
+class IMateriaSource
+{
 	public:
-		Animal();
-		Animal(std::string name);
-		Animal(const Animal& copy_animal);
-		virtual void makeSound() const;
-		std::string getType() const;
-		virtual ~Animal();
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif
