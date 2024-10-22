@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 18:52:02 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/19 15:52:20 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/10/21 14:29:08 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/10/21 23:31:12 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-#include "ClapTrap.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-class ScavTrap: public ClapTrap{
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Dog : public Animal{
+	Brain* Brain_Dog;
 	public:
-	ScavTrap();
-	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap &copy_scav);
-	void  attack(const std::string& target);
-	void guardGate();
-	~ScavTrap();
+	Dog();
+	Dog(std::string name);
+	Dog(const Dog& copy_dog);
+	void makeSound() const;
+	~Dog();
 };
 
 #endif

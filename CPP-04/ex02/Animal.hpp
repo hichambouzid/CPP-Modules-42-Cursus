@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 18:52:02 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/19 15:52:20 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/10/21 14:27:06 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/10/22 15:57:06 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-#include "ClapTrap.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-class ScavTrap: public ClapTrap{
+#include <iostream>
+
+class Animal{
+	protected:
+		std::string type;
 	public:
-	ScavTrap();
-	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap &copy_scav);
-	void  attack(const std::string& target);
-	void guardGate();
-	~ScavTrap();
+		Animal();
+		Animal(std::string name);
+		Animal(const Animal& copy_animal);
+		virtual void makeSound() const = 0;
+		std::string getType() const;
+		virtual ~Animal();
 };
 
 #endif

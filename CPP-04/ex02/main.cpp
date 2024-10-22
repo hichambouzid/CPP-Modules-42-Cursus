@@ -5,16 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 21:52:23 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/19 15:59:50 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/10/21 15:13:28 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/10/22 16:05:36 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
+#include "Dog.hpp"
+
 
 int main()
 {
-	FragTrap frog("Frog");
-	// ClapTrap::attack.frog("help+help");
-	// frog.attack("help+help");
+	// Animal test;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	j->makeSound();
+	i->makeSound();
+	delete j;//should not create a leak
+	delete i;
+	std::cout << "\\\n\\\n\\\n\\\n\\\n";
+	
+	const Animal *f[8];
+
+	for (int i = 0; i < 8 ; i++)
+	{
+		if (i < 5)
+			f[i] = new Cat;
+		else
+			f[i] = new Dog;						
+	}
+	
+	std::cout << "\\\n\\\n\\\n\\\n\\\n";
+	std::cout << "===================== Deleting =================\n";
+	for (int i = 0; i < 8; i++)
+		delete f[i];
+ 	return 0;
 }
