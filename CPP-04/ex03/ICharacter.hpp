@@ -6,14 +6,18 @@
 /*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:37:18 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/23 18:42:52 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/23 20:32:26 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-#include "AMateria.hpp"
+#include <iostream>
+
+// #include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 02:02:03 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/23 19:55:28 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:08:11 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 // #include "AMateria.hpp"
+
 
 class Character: public ICharacter
 {
 	protected:
-	std::string const *name;
+	std::string name;
 	AMateria *m[4];
+	AMateria *save[100];
 	public:
 	Character(std::string name);
 	std::string const & getName() const;

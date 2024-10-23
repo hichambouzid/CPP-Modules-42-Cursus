@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:29:42 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/23 19:45:41 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:04:40 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iostream>
 #include "ICharacter.hpp"
-
 
 class AMateria
 {

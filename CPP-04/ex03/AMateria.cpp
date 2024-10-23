@@ -34,6 +34,7 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
+	std::cout << "h=================================>\n";
 		std::cout << "* what i do with this " << target.getName() << " *\n";
 }
 
