@@ -6,14 +6,22 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:23:16 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/22 18:25:22 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:05:11 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
-class MateriaSource{
+#include "IMateriaSource.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+// #include "AMateria.hpp"
+
+class MateriaSource: public IMateriaSource {
+	public:
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
 
 };
 

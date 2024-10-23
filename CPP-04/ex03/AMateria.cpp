@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -12,6 +13,14 @@
 
 #include "AMateria.hpp"
 
+
+AMateria::AMateria()
+{
+	std::string name = "Default_AMateria";
+	std::cout << "Default Constructor called of AMateria\n";
+	this->type =  &name;	
+}
+
 AMateria::AMateria(std::string const &type)
 {
 	std::cout << "Constructor AMateria: " << type << " was created\n";
@@ -25,5 +34,13 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	
+	if (!getType().compare("ice"))
+		std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
+	else
+		std::cout << "* heatls " << target.getName() << "\'s wounds*\n";
+}
+
+AMateria::~AMateria()
+{
+	std::cout << "Destructor of AMateria:" << this->type << " Destroyed\n";
 }
