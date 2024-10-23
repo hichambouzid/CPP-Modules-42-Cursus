@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:50:30 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/23 17:59:55 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/23 19:54:44 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,14 @@ void Character::equip(AMateria* m)
 	}
 	if (!flag)
 		delete m;
+}
+
+void Character::unequip(int idx)
+{
+
+}
+
+void Character::use(int idx, ICharacter &target)
+{
+
 }

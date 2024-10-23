@@ -18,13 +18,13 @@ AMateria::AMateria()
 {
 	std::string name = "Default_AMateria";
 	std::cout << "Default Constructor called of AMateria\n";
-	this->type =  &name;	
+	this->type =  &name;
 }
 
 AMateria::AMateria(std::string const &type)
 {
 	std::cout << "Constructor AMateria: " << type << " was created\n";
-	this->type = &type; 
+	this->type = &type;
 }
 
 std::string const & AMateria::getType() const
@@ -34,10 +34,7 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	if (!getType().compare("ice"))
-		std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
-	else
-		std::cout << "* heatls " << target.getName() << "\'s wounds*\n";
+		std::cout << "* what i do with this " << target.getName() << " *\n";
 }
 
 AMateria::~AMateria()
