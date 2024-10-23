@@ -18,23 +18,23 @@ AMateria::AMateria()
 {
 	std::string name = "Default_AMateria";
 	std::cout << "Default Constructor called of AMateria\n";
-	this->type =  &name;
+	this->type =  name;
 }
 
 AMateria::AMateria(std::string const &type)
 {
 	std::cout << "Constructor AMateria: " << type << " was created\n";
-	this->type = &type;
+	this->type = type;
 }
 
 std::string const & AMateria::getType() const
 {
-	return (*this->type);
+	return (this->type);
 }
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "h=================================>\n";
+	std::cout << "h=================================>\n" << std::endl;
 		std::cout << "* what i do with this " << target.getName() << " *\n";
 }
 

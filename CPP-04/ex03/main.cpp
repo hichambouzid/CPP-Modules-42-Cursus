@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:37:33 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/23 18:37:26 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/23 22:38:46 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
 
-int main()
+int ft_main()
 {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
@@ -33,4 +33,10 @@ int main()
 	delete me;
 	delete src;
 	return 0;
+}
+
+int main()
+{
+	ft_main();
+	system("leaks Program_03");
 }
