@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:37:33 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/23 22:38:46 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/24 15:43:02 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
 
-int ft_main()
+int main()
 {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
@@ -26,17 +26,27 @@ int ft_main()
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
+	// me->unequip(1);
 	ICharacter* bob = new Character("bob");
+	ICharacter* Hitchman = new Character("Hitchaman");
+	ICharacter* b = new Character("ben");
+	ICharacter* bo = new Character("bo");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	me->use(1, *Hitchman);
+	me->use(1, *b);
+	me->use(0, *bo);
 	delete bob;
+	delete Hitchman;
+	delete b;
+	delete bo;
 	delete me;
 	delete src;
 	return 0;
 }
 
-int main()
-{
-	ft_main();
-	system("leaks Program_03");
-}
+// int main()
+// {
+// 	ft_main();
+// 	system("leaks Program_03");
+// }

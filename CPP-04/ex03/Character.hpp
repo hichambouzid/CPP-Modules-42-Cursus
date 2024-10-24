@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 02:02:03 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/23 22:41:18 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/24 15:19:52 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Character: public ICharacter
 	std::string name;
 	public:
 	Character(std::string name);
+	Character & operator=(Character const &Character);
 	std::string const & getName() const;
 	void equip(AMateria* m);
 	void unequip(int idx);

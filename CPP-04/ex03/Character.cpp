@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:50:30 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/23 22:41:05 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/24 15:36:33 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void Character::equip(AMateria* m)
 {
 	if (index >= 0 && index <= 3)
 	{
-		std::cout << "name is :" << m->getType() << "\n";
+		// std::cout << "name is :" << m->getType() << "\n";
 		this->m[index++] = m;
 	}
 	else
@@ -52,6 +52,8 @@ void Character::unequip(int idx)
 			if (!save[i])
 				break;
 		this->save[i] = m[idx]->clone();
+		delete m[idx];
+		m[idx] = 0; 
 	}
 }
 
@@ -64,12 +66,35 @@ void Character::use(int idx, ICharacter &target)
 	}
 }
 
+Character & Character::operator=(Character const &Character_copy)
+{
+	std::cout << "Copy assignment operator called\n";
+	if (this != &Character_copy)
+	{
+		for (int i = 0; i < 4; i++)
+			if(Character_copy.m[i]) 
+				this->m[i] = Character_copy.m[i]->clone();
+		for (int i = 0; i < 100; i++)
+		{
+			if (Character_copy.save[i])
+				this->save[i] = Character_copy.save[i]->clone();
+		}
+		this->index = Character_copy.index;
+	}
+	return (*this);
+}
+
 Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->m[i])
 			delete this->m[i];
+	}
+		for (int i = 0; i < 100; i++)
+	{
+		if (this->save[i])
+			delete this->save[i];
 	}
 	std::cout << "Destructor of MateriaSource called\n";
 }
