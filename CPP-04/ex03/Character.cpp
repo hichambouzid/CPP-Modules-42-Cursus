@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:50:30 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/25 12:22:56 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 13:21:05 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void Character::equip(AMateria* m)
 		if (cmp_address(m) == true)
 			this->m[index++] = m;
 		else
-			std::cerr << "You can't add the same AMateria\n";
+			this->m[index++] = m->clone();
 	}
 		else
 			std::cout << "array of AMateria is full\n";
