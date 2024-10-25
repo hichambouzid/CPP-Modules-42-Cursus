@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 01:21:38 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/25 13:29:29 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 17:24:11 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,26 @@ MateriaSource::MateriaSource(){
 	std::cout << "Default constructor of MateriaSource called\n";
 	for (int i = 0; i < 4; i++)
 		this->array_Materia[i] = NULL;
+}
+
+MateriaSource::MateriaSource(const MateriaSource & copy_materai)
+{
+	std::cout << "Copy constructor materiaSource was called\n";
+	*this = copy_materai;
+}
+
+MateriaSource & MateriaSource::operator=(const MateriaSource & copy_materai)
+{
+	std::cout << "Copy assignment operator was called\n";
+	if (this != &copy_materai)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			if (copy_materai.array_Materia[i])
+				this->array_Materia[i] = copy_materai.array_Materia[i]->clone();
+		}
+	}
+	return (*this);
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)
