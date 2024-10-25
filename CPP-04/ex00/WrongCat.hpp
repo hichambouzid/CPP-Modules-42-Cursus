@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:41:32 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/21 18:51:06 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 15:23:27 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class WrongCat : public WrongAnimal
 		WrongCat();
 		WrongCat(std::string name);
 		WrongCat(const WrongCat &copy_WrongCat);
+		WrongCat & operator=(const WrongCat &copy_WrongCat);
 		void makeSound() const;
 		~WrongCat();
 };

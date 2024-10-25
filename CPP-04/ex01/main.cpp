@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:13:28 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/25 11:16:00 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 15:34:35 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	delete j;//should not create a leak
 	delete i;
 	std::cout << "\\\n\\\n\\\n\\\n\\\n";
-	
+
 	const Animal *f[8];
 
 	for (int i = 0; i < 8 ; i++)
@@ -33,11 +33,12 @@ int main()
 		if (i < 5)
 			f[i] = new Cat;
 		else
-			f[i] = new Dog;						
+			f[i] = new Dog;
 	}
-	
+
 	std::cout << "\\\n\\\n\\\n\\\n\\\n";
 	std::cout << "===================== Destructing =================\n";
 	for (int i = 0; i < 8; i++)
 		delete f[i];
+	return (0);
 }

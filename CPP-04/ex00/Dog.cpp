@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:23:12 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/21 17:10:04 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 15:16:24 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Dog::Dog()
 {
 	std::cout << "Default constructor of Dog class called\n";
-	this->type =  "Dog";	
+	this->type =  "Dog";
 }
 
 Dog::Dog(std::string name)
@@ -28,6 +28,16 @@ Dog::Dog(const Dog& copy_dog)
 {
 	std::cout << "Copy constructor of Dog class called\n";
 	this->type = copy_dog.type;
+}
+
+Dog & Dog::operator=(const Dog & copy_dog)
+{
+	std::cout << "Copy assingnment operator Dog called\n";
+	if (this != &copy_dog)
+	{
+		this->type = copy_dog.type;
+	}
+	return (*this);
 }
 
 void Dog::makeSound() const

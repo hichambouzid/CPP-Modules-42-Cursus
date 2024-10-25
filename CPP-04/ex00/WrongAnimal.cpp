@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:37:32 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/21 18:57:23 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 15:27:23 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,17 @@ WrongAnimal::WrongAnimal(std::string name)
 WrongAnimal::WrongAnimal(const WrongAnimal& copy_Animal)
 {
 	std::cout << "Copy constructor of WrongAnimal class was called\n";
-	this->type = copy_Animal.type;	
+	this->type = copy_Animal.type;
+}
+
+WrongAnimal & WrongAnimal::operator=(const WrongAnimal & copy_Animal)
+{
+	std::cout << "Copy assignment operator of WrongAnimal was called\n";
+	if (this != &copy_Animal)
+	{
+		this->type = copy_Animal.type;
+	}
+	return (*this);
 }
 
 void WrongAnimal::makeSound() const

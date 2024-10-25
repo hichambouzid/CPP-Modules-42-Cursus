@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 18:31:06 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/21 18:52:58 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 15:24:51 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 WrongCat::WrongCat()
 {
 	std::cout << "WorngCat was created\n";
-	this->type = "WrongCat_tom";	
+	this->type = "WrongCat_tom";
 }
 
 WrongCat::WrongCat(std::string name)
@@ -27,6 +27,14 @@ WrongCat::WrongCat(const WrongCat &copy_WrongCat)
 {
 	std::cout << "Copy constructor called\n";
 	this->type = copy_WrongCat.type;
+}
+
+WrongCat & WrongCat::operator=(const WrongCat &copy_WrongCat)
+{
+	std::cout << "Copy assignment operator of WrongCat was called\n";
+	if (this != &copy_WrongCat)
+		this->type = copy_WrongCat.type;
+	return (*this);
 }
 
 void WrongCat::makeSound() const

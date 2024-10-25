@@ -8,7 +8,7 @@ CPPFILS = AMateria.cpp Character.cpp Cure.cpp Ice.cpp  MateriaSource.cpp main.cp
 
 
 all:
-	$(CXX) $(CPPFLAGS) $(CPPFILS)  -o $(Name) -fsanitize=address
+	$(CXX) $(CPPFLAGS) $(CPPFILS)  -o $(Name) #-fsanitize=address
 
 clean:
 	rm -rf $(Name)
