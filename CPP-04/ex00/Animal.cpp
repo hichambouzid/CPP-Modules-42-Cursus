@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:01:28 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/22 15:55:41 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 14:54:43 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,17 @@ Animal::Animal(std::string name)
 Animal::Animal(const Animal& copy_animal)
 {
 	std::cout << "Copy construtor called\n";
-	this->type = copy_animal.type;
+	*this = copy_animal;
+}
+
+Animal & Animal::operator=(const Animal & copy_animal)
+{
+	std::cout << "Copy assignment operator of Animal Called\n";
+	if (this != &copy_animal)
+	{
+		this->type = copy_animal.type;
+	}
+	return (*this);
 }
 
 void Animal::makeSound() const

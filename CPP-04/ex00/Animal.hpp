@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 14:27:06 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/22 15:55:47 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 14:50:33 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Animal{
 		Animal();
 		Animal(std::string name);
 		Animal(const Animal& copy_animal);
+		Animal & operator=(const Animal & copy_animal);
 		virtual void makeSound() const;
 		std::string getType() const;
 		virtual ~Animal();
