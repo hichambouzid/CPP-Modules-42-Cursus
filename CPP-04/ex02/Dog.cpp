@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:23:12 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/21 23:53:33 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 11:12:53 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,20 @@ Dog::Dog(std::string name)
 Dog::Dog(const Dog& copy_dog)
 {
 	std::cout << "Copy constructor of Dog class called\n";
-	this->Brain_Dog = copy_dog.Brain_Dog;
-	this->type = copy_dog.type;
+	*this = copy_dog;
+}
+
+Dog & Dog::operator=(const Dog & copy_dog)
+{
+	std::cout << "Copy constructor of Dog class called\n";
+	if (this != &copy_dog)
+	{
+		this->type = copy_dog.type;
+		this->Brain_Dog = new Brain;
+		for (int i = 0; i < 100; i++)
+			this->Brain_Dog->setNAme(i, copy_dog.Brain_Dog->getNAme(i));
+	}
+	return (*this);
 }
 
 void Dog::makeSound() const

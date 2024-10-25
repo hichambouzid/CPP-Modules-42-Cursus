@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:23:16 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/23 22:35:58 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 12:18:38 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class MateriaSource: public IMateriaSource {
 	AMateria *array_Materia[4];
 	public:
 		MateriaSource();
+		bool cmp_address(void *m);	
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);
 		~MateriaSource();

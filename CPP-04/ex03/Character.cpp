@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:50:30 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/24 15:36:33 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/25 12:22:56 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,30 @@ std::string const & Character::getName() const
 	return (this->name);
 }
 
+bool Character::cmp_address(void *m)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (!this->m[i])
+			return (true);
+		else if (this->m[i] == m)
+			return (false);
+	}
+	return (true);
+}
+
 void Character::equip(AMateria* m)
 {
 	if (index >= 0 && index <= 3)
 	{
 		// std::cout << "name is :" << m->getType() << "\n";
-		this->m[index++] = m;
+		if (cmp_address(m) == true)
+			this->m[index++] = m;
+		else
+			std::cerr << "You can't add the same AMateria\n";
 	}
-	else
-		std::cout << "array of AMateria is full\n";
+		else
+			std::cout << "array of AMateria is full\n";
 }
 
 void Character::unequip(int idx)
