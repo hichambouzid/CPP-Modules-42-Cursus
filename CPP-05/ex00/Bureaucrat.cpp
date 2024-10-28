@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:16:43 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/28 16:39:14 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:35:09 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,18 @@ int Bureaucrat::getGrade()
 }
 
 void Bureaucrat::increment()
-{	
+{ 	
 	std::cout << "Incremenent function called.\n";
 	try
 	{
 		if (this->grade >= 1)
-			throw GradeTooHighException();
+			throw Myexception("Grade to high for Bureaucrat.\n");
 		else
 			this->grade--;	
 	}
-	catch(const char *e)
+	catch(const Myexception &e)
 	{
-		printf("================\n");
-		std::cerr << e ;
+		std::cerr << e.what();
 	}
 	
 }
@@ -72,13 +71,13 @@ void Bureaucrat::decrement()
 	try
 	{
 		if (this->grade == 150)
-				throw GradeTooLowException();
+				throw Myexception("Grade too low for Buraeucrat.\n");
 		else
 			this->grade++;
 	}
-	catch(const char *e)
+	catch(const Myexception &e)
 	{
-		std::cerr << e ;
+		std::cerr << e.what();
 	}
 }
 

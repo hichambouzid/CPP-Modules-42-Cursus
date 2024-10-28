@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:43:31 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/28 16:39:32 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:34:20 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 int main()
 {
 	Bureaucrat hicham(149, "hicham");
+	hicham.increment();
+	hicham.increment();
+	hicham.increment();
 	hicham.decrement();
 	std::cout << hicham << std::endl;
 	hicham.decrement();
-	hicham.increment();
 	std::cout << hicham << std::endl;
 	
 }
