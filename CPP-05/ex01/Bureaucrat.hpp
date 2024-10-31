@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:09:45 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/31 14:25:21 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/31 14:24:13 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ class Bureaucrat
 		void increment();
 		void decrement();
 		~Bureaucrat();
-		class Myexception : public std::exception
-		{
-			std::string const _name;
-			public:
-			// Myexception(){}
-			Myexception(std::string const &exceptionn) : _name(exceptionn){};
-			const char* what() const throw()  {return _name.c_str();}
-			~Myexception()_NOEXCEPT{}
-		};
+	class Myexception : public std::exception
+	{
+		std::string const _name;
+		public:
+		// Myexception(){}
+		Myexception(std::string const &exceptionn) : _name(exceptionn){};
+		const char* what() const throw()  {return _name.c_str();}
+		~Myexception()_NOEXCEPT{}
+	};
 };
 std::ostream &operator<<(std::ostream &os, Bureaucrat &bureaucrat);
 
