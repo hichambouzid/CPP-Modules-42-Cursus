@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:09:45 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/31 14:25:21 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/31 17:37:51 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Bureaucrat
 		Bureaucrat(Bureaucrat const & copy_Bureaucrat);
 		Bureaucrat * operator=(Bureaucrat const & copy_Bureaucrat);
 		Bureaucrat(int grade, std::string  Name);
-		const char *GradeTooLowException();
-		const char *GradeTooHighException();
+		std::string const GradeTooLowException();
+		std::string const GradeTooHighException();
 		std::string getName() const;
 		int getGrade() const;
 		void increment();

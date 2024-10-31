@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:43:31 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/30 23:31:36 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/31 17:48:14 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int main()
 {
-	Bureaucrat hicham(149, "hicham");
-	Bureaucrat hic(hicham);
+	Bureaucrat hicham(1, "hicham");
+	// Bureaucrat hic(hicham);m
 	hicham.increment();
 	hicham.increment();
 	hicham.increment();
@@ -24,5 +24,5 @@ int main()
 	std::cout << hicham << std::endl;
 	hicham.decrement();
 	std::cout << hicham << std::endl;
-	
+
 }
