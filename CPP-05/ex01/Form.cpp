@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:36:26 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/31 19:48:14 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/31 21:14:43 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,17 @@ Form::Form(std::string const & name, int grade_to_sign, int grade_to_execute): _
 	}
 }
 
-Form::Form(Form  const & copy_form)
+Form::Form(Form const &copy_form) : _name(copy_form.getName()),
+	to_sign(copy_form.getRSign()), to_exec(copy_form.getRExecute())
 {
-	*this = copy_form;
+	this->sign = false;
 }
 
-Form & Form::operator=(Form const &copy_form)
+Form * Form::operator=(Form const &copy_form)
 {
 	if (this != &copy_form)
 		*this = Form(copy_form.getName(), copy_form.getRSign(), copy_form.getRExecute());
-	return (*this);
+	return (this);
 }
 
 

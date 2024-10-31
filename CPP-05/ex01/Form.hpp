@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:40:58 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/31 19:48:32 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/10/31 21:07:56 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Form
 	public:
 	Form(std::string const & name, int grade_to_sign, int grade_to_execute);
 	Form(Form const & copy_form);
-	Form & operator=(Form  const & copy_form);
+	Form * operator=(Form  const & copy_form);
 	std::string const & getName() const;
 	bool getPermessiom() const;
 	int getRSign() const;
