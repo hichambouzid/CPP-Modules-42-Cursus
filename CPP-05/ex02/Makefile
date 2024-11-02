@@ -1,9 +1,10 @@
 Name = Form_process
 
-CPPFILS = Bureaucrat.cpp main.cpp Form.cpp
+CPPFILS = AForm.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp\
+		Bureaucrat.cpp RobotomyRequestForm.cpp  main.cpp
 
 all:
-	c++ -Wall -Wextra -Werror -std=c++98 -fsanitize=address $(CPPFILS) -o $(Name)
+	c++ -Wall -Wextra -Werror -std=c++98 $(CPPFILS) -o $(Name)
 
 clean:
 	rm -rf $(Name)

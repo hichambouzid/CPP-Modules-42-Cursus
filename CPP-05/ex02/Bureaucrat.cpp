@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:16:43 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/31 19:18:33 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/11/02 17:35:12 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,22 +88,41 @@ void Bureaucrat::increment()
 	}
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::executeForm(AForm  & form)
 {
-	if (form.getPermessiom() == true)
-		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	try {
+		if (form.getPermessiom() == true)
+		{
+			std::cout << this->getName() << " executed " << form.getName() << "\n";
+			form.execute(*this);
+		}
+		else
+		{
+			throw Myexception(GradeTooLowException());
+		}
+	}
+	catch (const Myexception &e)
+	{
+		std::cerr << e.what();
+	}
+}
+
+void Bureaucrat::signAForm(AForm &Aform)
+{
+	if (Aform.getPermessiom() == true)
+		std::cout << this->getName() << " signed " << Aform.getName() << std::endl;
 	else
 	{
 		try
 		{
-			if (form.getRSign() < getGrade())
+			if (Aform.getRSign() < getGrade())
 				throw Myexception(GradeTooHighException());
 			else
 				throw Myexception(std::string("the from doesn't passe to bureaucrat.\n"));
 		}
 		catch(const Myexception& e)
 		{
-			std::cerr << this->name << " couldn't sign "  << form.getName() << " becuase " << e.what();
+			std::cerr << this->name << " couldn't sign "  << Aform.getName() << " becuase " << e.what();
 		}
 
 	}

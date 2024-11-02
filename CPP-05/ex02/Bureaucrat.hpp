@@ -1,22 +1,26 @@
-////////* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:09:45 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/10/31 17:37:51 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/11/01 20:21:04 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/11/02 17:29:18 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
+// #include " PresidentialPardonForm.hpp"
+// #include "RobotomyRequestForm.hpp"
+// #include "ShrubberyCreationForm.hpp"
 
-class Form;
+class AForm;
 class Bureaucrat
 {
  	const std::string name;
@@ -32,7 +36,8 @@ class Bureaucrat
 		int getGrade() const;
 		void increment();
 		void decrement();
-		void signForm(Form &form);
+		void signAForm(AForm &Aform);
+		void executeForm(AForm  & form);
 		~Bureaucrat();
 		class Myexception : public std::exception
 		{
@@ -44,6 +49,7 @@ class Bureaucrat
 			~Myexception()_NOEXCEPT{}
 		};
 };
+
 std::ostream &operator<<(std::ostream &os, Bureaucrat &bureaucrat);
 
 
