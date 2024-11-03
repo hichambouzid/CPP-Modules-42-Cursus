@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:17:59 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/11/02 17:36:22 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/11/03 17:06:05 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,17 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor)
 	{
 		std::cerr << e.what();
 	}
+}
+
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & copy_PresidentialPardonForm) : AForm("PresidentialPardonForm", 25, 5), target(copy_PresidentialPardonForm.target)
+{
+	std::cout << "Copy constructor of copy_PresidentialPardonForm was called\n";
+}
+
+PresidentialPardonForm * PresidentialPardonForm::operator=(PresidentialPardonForm const & copy_PresidentialPardonForm)
+{
+	std::cout << "Copy assignment constructor was called\n";
+	return (this);
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
