@@ -8,5 +8,5 @@ int main(int ac, char **av)
 		std::cerr << "Invalid number of argument.\n";
 		return (1);
 	}
-	
+	ScalarConverter::convert(std::string(av[1]));
 }
