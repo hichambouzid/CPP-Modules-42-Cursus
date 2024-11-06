@@ -25,7 +25,6 @@ void cast_to_int(char *str, double number)
 
 void cast_to_float(char *str, double number)
 {
-	// if (std::string(str).compare())
 	if (*str)
 	{
 		std::cout << "nanf\n";
