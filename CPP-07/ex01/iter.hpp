@@ -4,8 +4,8 @@
 #include <string.h>
 #include <iostream>
 
-template <typename T>
-void iter(T arr, int length, T (*f)(T))
+template <typename T, typename F>
+void iter(T arr, int length, F f)
 {
 	for (int i = 0; i < length; i++)
 		f(arr[i]);
