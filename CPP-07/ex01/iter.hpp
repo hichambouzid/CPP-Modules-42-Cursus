@@ -7,14 +7,16 @@
 template <typename T, typename F>
 void iter(T arr, int length, F f)
 {
+	if (!arr || !f)
+		return ;
 	for (int i = 0; i < length; i++)
 		f(arr[i]);
 }
 
-template<typename T>
-void print(T to_print)
-{
-	std::cout << to_print << std::endl;
-}
+// template<typename T>
+// void print(T to_print)
+// {
+// 	std::cout << to_print << std::endl;
+// }
 
 #endif
