@@ -13,8 +13,8 @@ void iter(T arr, int length, F f)
 		f(arr[i]);
 }
 
-// template<typename T>
-// void print(T to_print)
+// template<typename F>
+// void print(F &to_print)
 // {
 // 	std::cout << to_print << std::endl;
 // }
