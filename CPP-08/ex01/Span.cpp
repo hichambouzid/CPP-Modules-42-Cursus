@@ -64,26 +64,15 @@ int Span::shortestSpan()
 			std::set<int>::iterator it = f.begin();
 			int a = *(it) ;
 			int b = *(++it) - a;
-			// int a = b - a;
 			for (it = f.begin(); it != f.end(); ++it)
 			{
-				std::cout << "=======" << *(it) << "============\n";
 				std::set<int>::iterator If = it;
 				++If;
 				for (; If != f.end() ;If++)
 				{
-					std::cout << "=======" << *(If) << "============\n";
 					if (*(If) - *(it) < b)
-					{
-						// std::cout << "=====\n";
-						std::cout << *(If) << "\n";
-						std::cout << *(it) << "\n";
-						// std::cout << "=====\n";
 						b = *(If) - *(it);
-					}
 				}
-				std::cout << "\n\n";
-				// i++;
 			}
 			return (b);
 		}
@@ -117,4 +106,21 @@ int Span::longestSpan()
 	}
 	return (0);
 
+}
+
+
+void Span::addNumbers()
+{
+	int how;
+
+	how = (int)nbr - (int)increment;
+	if (how > 0)
+	{
+		srand(time(0));
+		for (int i = 0; i < how; i++)
+			f.insert(rand());
+		// ======= result of generating numbers =========
+		// for (std::multiset<int>::iterator it = f.begin(); it != f.end(); it++)
+		// 		std::cout << "=======> " << *(it) << '\n';
+	}
 }

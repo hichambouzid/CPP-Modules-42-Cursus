@@ -1,4 +1,4 @@
-Name = easyfind
+Name = Span_l_s
 
 CPPFILS = main.cpp Span.cpp
 

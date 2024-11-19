@@ -5,12 +5,13 @@
 #include <exception>
 #include <algorithm>
 #include <set>
+#include <stdlib.h>
 
 class Span
 {
 		unsigned int nbr;
 		unsigned int increment;
-		std::set<int> f;
+		std::multiset<int> f;
 	public:
 		Span(unsigned int number);
 		Span(const Span & s);
@@ -19,6 +20,7 @@ class Span
 		void addNumber(int n);
 		int shortestSpan();
 		int longestSpan();
+		void addNumbers();
 };
 
 #endif
