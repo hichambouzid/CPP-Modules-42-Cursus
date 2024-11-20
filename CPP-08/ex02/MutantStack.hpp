@@ -11,7 +11,10 @@ class MutantStack : public std::stack<T>
 	public:
 	MutantStack(){}
 	~MutantStack(){}
-	MutantStack(const MutantStack &sta): std::stack<T>(sta){}
+	MutantStack(const MutantStack &sta)
+	{
+		*this = sta;
+	}
 	typedef typename std::stack<T>::container_type::iterator iterator;
 	iterator begin(){
 		return this->c.begin();
