@@ -11,9 +11,20 @@ void BitcoinExchange::SplitCsv(std::string line)
 void BitcoinExchange::SplitData(std::string line)
 {
 	std::size_t pos;
+	char *str = NULL;
 
-	pos = line.find(" |");
-	Input.push_back(std::pair<std::string, std::string>(line.substr(0, pos), line.substr(pos + 3)));
+	pos = line.find(" | ");
+	if (std::string::npos == pos)
+		Input.push_back(std::pair<std::string, std::string>(std::string("Error: Bad input"), line));		
+	else
+	{
+		if (strtod_l(line.substr(pos + 3).c_str(), &str, NULL) <= 0 || *str)
+		{
+		Input.push_back(std::pair<std::string, std::string>(std::string("Error: not a positive number."), std::string("")));		
+		}
+		else
+			Input.push_back(std::pair<std::string, std::string>(line.substr(0, pos), line.substr(pos + 3)));
+	}
 }
 
 BitcoinExchange::BitcoinExchange(char * arg1, char * arg2)
@@ -32,6 +43,9 @@ BitcoinExchange::BitcoinExchange(char * arg1, char * arg2)
 		SplitCsv(r);
 	while (std::getline(ToExchange, r))
 		SplitData(r);
+		std::cout << "inside loupe.\n";
 	for (std::vector<std::pair<std::string, std::string> >::iterator it = Input.begin(); it != Input.end(); it++)
+	{
 		std::cout << it->first << " ===================== " << it->second << '\n';
+	}
 }
