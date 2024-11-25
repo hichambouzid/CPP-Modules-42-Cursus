@@ -26,3 +26,15 @@ getting a point from correction .
 terminating ex02.
 pushing today.
 todo : using throw and catch in identify ex02.
+2024-11-14:
+terminating two exercises in module cpp-08.
+
+
+create a function can remplace addnumber, by function containe range of numbers we want to add,
+- check if the range less than the rest N.
+- check if data of Echangebtc is valide & there is no error in date .
+- use this function to convert btc price. strtold_l.
+
+- if data gave to exchange start with date and value
+- Check if date valide by spliting the string .
+-  use function check the month and day.

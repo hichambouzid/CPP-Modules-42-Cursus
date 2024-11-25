@@ -11,18 +11,16 @@ void BitcoinExchange::SplitCsv(std::string line)
 void BitcoinExchange::SplitData(std::string line)
 {
 	std::size_t pos;
-	char *str = NULL;
+	// char *str = NULL;
 
 	pos = line.find(" | ");
 	if (std::string::npos == pos)
 		Input.push_back(std::pair<std::string, std::string>(std::string("Error: Bad input"), line));		
 	else
 	{
-		if (strtod_l(line.substr(pos + 3).c_str(), &str, NULL) <= 0 || *str)
-		{
-		Input.push_back(std::pair<std::string, std::string>(std::string("Error: not a positive number."), std::string("")));		
-		}
-		else
+		// if (strtod_l(line.substr(pos + 3).c_str(), &str, NULL) <= 0 || *str)
+		// 	Input.push_back(std::pair<std::string, std::string>(std::string("Error: not a positive number."), std::string("")));		
+		// else
 			Input.push_back(std::pair<std::string, std::string>(line.substr(0, pos), line.substr(pos + 3)));
 	}
 }
@@ -43,9 +41,45 @@ BitcoinExchange::BitcoinExchange(char * arg1, char * arg2)
 		SplitCsv(r);
 	while (std::getline(ToExchange, r))
 		SplitData(r);
-		std::cout << "inside loupe.\n";
 	for (std::vector<std::pair<std::string, std::string> >::iterator it = Input.begin(); it != Input.end(); it++)
 	{
 		std::cout << it->first << " ===================== " << it->second << '\n';
+	}
+}
+
+int DVrangeCheck(std::string date)
+{
+	char *str;
+	const char *number = date.c_str();
+	int date = strtod(number, &str);
+	int month = strtod(number, &str);
+	int day = strtod(number, &str);
+}
+
+void CheckErrors(std::vector<std::pair<std::string, std::string> >::iterator f, int flag)
+{
+	try{
+		if (flag == 0 && (f->first.compare("date") || f->second.compare("value")))
+			throw std::string("Error correct the first line .");
+		else if (!DVrangeCheck(f))
+		{
+		}
+	}
+	catch (std::string e)
+	{
+		std::cerr << e << '\n';
+	}
+}
+
+void BitcoinExchange::StartExchange()
+{
+	std::vector<std::pair<std::string, std::string> >::iterator it = Input.begin();
+	int i;
+
+	i = 0;
+	for (; it != Input.end(); it++)
+	{
+		CheckErrors(it, i);
+		i++;
 	}
 }

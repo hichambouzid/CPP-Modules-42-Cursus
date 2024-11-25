@@ -9,5 +9,5 @@ int main(int ac, char **av)
 		return (0);
 	}
 	BitcoinExchange btcExchanger(av[1], av[2]);
-	// btcExchanger.StartExchange();
+	btcExchanger.StartExchange();
 }
