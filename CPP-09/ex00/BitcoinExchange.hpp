@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <exception>
-
+#include <string>
 class BitcoinExchange
 {
 	std::vector<std::pair<std::string, std::string> > data_csv;
@@ -17,6 +17,7 @@ public:
 	void SplitCsv(std::string line);
 	void SplitData(std::string line);
 	void StartExchange();
+	// int DVrangeCheck(std::vector<std::pair<std::string, std::string> >::iterator f);
 };
 
 #endif
