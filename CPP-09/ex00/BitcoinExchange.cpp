@@ -59,7 +59,7 @@ int DVrangeCheck(std::vector<std::pair<std::string, std::string> >::iterator f, 
 	std::string var1, var2;
 	double value;
 
-	// std::cout << "checccck : " <<  (f->second) << '\n';
+	// std::cout << "checccck : " << f->first << " === " <<  f->second << '\n';
 	if (*str || date <= 0 || month <= 0 || day <= 0 || date < 2009)
 		return (0);
 	if (range[month - 1] < day)
@@ -76,31 +76,39 @@ int DVrangeCheck(std::vector<std::pair<std::string, std::string> >::iterator f, 
 			return (-3);
 		else
 		{
-			// std::cout << "I'm here .\n";
-		j = data.begin() + 1;
+		j = data.begin();
 		for (; j != data.end(); j++)
 		{
 		 	var1 = f->first.substr(0, 7);
 			var2 = j->first.substr(0, 7);
-			// std::cout << "---------> " << var1 << '\n';
-			// std::cout << "---------> " << var2 << '\n';
-			if (var1.compare(var2))
+			if (!var1.compare(var2))
 			{
 				var1 = f->first.substr(8);
 				var2 = j->first.substr(8);
-
 				if (strtod(var1.c_str(), &str) == strtod(var2.c_str(), &str))
 				{
+					// std::cout << "======day===> " << j->first << " === " << j->sec << '\n';
+					// double tmp = strtod(var2.c_str(), &str);
 					var1 = f->second;
 					var2 = j->second;
-					// std::cout << "----date to exechange-----> " << var1 << '\n';
-					std::cout << "---valueeee ------> " << var2 << '\n';
-					std::cout << f->first << " => " << f->second << " = " <<strtod(var1.c_str(), &str) * strtod(var2.c_str(), &str) << '\n';
+					// std::cout << "=====value====> " << var2 << '\n';
+					std::cout << f->first <<  " => " << f->second << " = " << strtod(var1.c_str(), &str) * strtod(var2.c_str(), &str) << '\n';
+					return (10);
+				}
+				if (strtod(var1.c_str(), &str) < strtod(var2.c_str(), &str))
+				{
+					// std::cout << "======day===> " << j->first << " === " << j->sec << '\n';
+					// double tmp = strtod(var2.c_str(), &str);
+					if (--j != data.begin())
+					var1 = f->second;
+					var2 = j->second;
+					// std::cout << "=====value====> " << var2 << '\n';
+					std::cout << f->first <<  " => " << f->second << " = " << strtod(var1.c_str(), &str) * strtod(var2.c_str(), &str) << '\n';
 					return (10);
 				}
 			}
 		}
-		}
+	}
 		return (10);
 }
 }
@@ -109,6 +117,9 @@ int DVrangeCheck(std::vector<std::pair<std::string, std::string> >::iterator f, 
 
 void CheckErrors(std::vector<std::pair<std::string, std::string> >::iterator f, int flag, std::vector<std::pair<std::string, std::string> > data)
 {
+	int i;
+
+	i = DVrangeCheck(f, data);
 	try{
 		// if (flag == 0 && (!f->first.compare("date") || !f->second.compare("value")))
 		// 	return;
@@ -116,14 +127,16 @@ void CheckErrors(std::vector<std::pair<std::string, std::string> >::iterator f, 
 			throw std::string("Error: correct the first line .");
 		else if (!f->first.compare("Error: Bad input"))
 			throw f->first + std::string(" => ") + f->second;
-		else if (!DVrangeCheck(f, data) && flag)
+		else if (!i && flag)
 			throw std::string("Error: in date config.");
-		else if (DVrangeCheck(f, data) == -1 && flag)
+		else if (i == -1 && flag)
 			throw std::string("Error: invalide value to Exchange.");
-		else if (DVrangeCheck(f, data) == -2 && flag)
+		else if (i == -2 && flag)
 			throw std::string("Error: not a possitive number.");
-		else if (DVrangeCheck(f, data) == -3 && flag)
+		else if (i == -3 && flag)
 			throw std::string("Error: too large a number.");
+		else
+			return ;
 	}
 	catch (std::string e)
 	{
