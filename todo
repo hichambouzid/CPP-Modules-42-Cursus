@@ -38,3 +38,4 @@ create a function can remplace addnumber, by function containe range of numbers 
 - if data gave to exchange start with date and value
 - Check if date valide by spliting the string .
 -  use function check the month and day.
+-function search for operatores and store theme.
