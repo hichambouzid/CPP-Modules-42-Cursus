@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stack>
 #include <algorithm>
-
+#include <string.h>
 // std::stack<char *> Numbers;
 // std::stack<char *> operators;
 void StoreArgumment(int ac, char **av);

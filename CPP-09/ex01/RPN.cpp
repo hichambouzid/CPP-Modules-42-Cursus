@@ -6,54 +6,47 @@ static std::stack<char *> operators;
 void ReversePolishNumber()
 {
 	char *c;
-	int total = Numbers.top();
+	int left;
+	int right;
+
+	if (Numbers.size() < 2 || operators.empty())
+	{
+		std::cerr << (Numbers.size() < 2 ? "Error: invalide syntax of reverse polish Number .\n" :
+				"Error: there is no operator to calculate .\n");
+		exit(-1);
+	}
+	right = Numbers.top();
 	Numbers.pop();
-
-	while (!operators.empty())
-	{
-		// std::cout << "========\n";
-		c = operators.top();
-		operators.pop();
-		if (*c == '+')
-			total += Numbers.top();
-		if (*c == '-')
-			total -= Numbers.top();
-		if (*c == '*')
-			total *= Numbers.top();
-		if (*c == '/')
-			total /= Numbers.top();
-		Numbers.pop();
-	}
-	if (Numbers.empty() && !operators.empty())
-		std::cout << "Error: there is no enough of operators .\n";
-	else
-		std::cout << total << '\n';
+	left = Numbers.top();
+	Numbers.pop();
+	c = operators.top();
+	operators.pop();
+	if (*c == '+')
+		Numbers.push(left + right);
+	if (*c == '-')
+		Numbers.push(left - right);
+	if (*c == '*')
+		Numbers.push(left * right);
+	if (*c == '/')
+		Numbers.push(left / right);
 }
 
-void ReverseStack(){
 
-	std::stack<int>  TmpStack;
-
-	while (!Numbers.empty())
-	{
-		TmpStack.push(Numbers.top());
-		Numbers.pop();
-	}
-	Numbers = TmpStack;
-}
-
-void StoreOperators(int ac, char **av)
+void StoreArgumment(int ac, char **av)
 {
 	char *str;
-
+	char *ptr = NULL;
+	int number;
+	// char *tmp;
+	// int flag = 1;
 	for (int j = 1; j < ac; j++)
 	{
-		str = strtok(av[j], " \t\v1 2 3 4 5 6 7 8 9");
+		str = strtok(av[j], " \t\v");
 		while (str)
 		{
+			number = strtod(str, &ptr);
 			if (*str == '+' || *str == '-' || *str == '*' || *str == '/')
 			{
-				std::cout << "++++++ " << *str << '\n';
 				for (int i = 0; str[i]; i++)
 				{
 					if (str[i] != *str)
@@ -63,37 +56,21 @@ void StoreOperators(int ac, char **av)
 					}
 				}
 				operators.push(str);
+				ReversePolishNumber();
+
 			}
-			std::cout << "-----> " << *str << '\n';
-			str = strtok(NULL, " \t\v");;
-		}
-	}
-	ReverseStack();
-	ReversePolishNumber();
-}
-
-void StoreArgumment(int ac, char **av)
-{
-	char *str;
-	char *ptr = NULL;
-	int number;
-
-	for (int j = 1; j < ac; j++)
-	{
-		str = strtok(av[j], " \t\v*+-/");
-		while (str)
-		{
-			number = strtod(str, &ptr);
-			if (number > 10 || *ptr)
+			else if (number >= 10 || *ptr)
 			{
 				std::cerr << "Error: invalide number.\n";
 				exit(-1);
 			}
 			else
 				Numbers.push(number);
-			std::cout << "-----> " << *str << '\n';
-			str = strtok(NULL, " \t\v*+-/");
+			str = strtok(NULL, " \t\v");
 		}
 	}
-	StoreOperators(ac, av);
+	if (Numbers.size() == 1)
+			std::cout << Numbers.top() << '\n';
+	else
+		std::cout << "We need more operators man .\n";
 }

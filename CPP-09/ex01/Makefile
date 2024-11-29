@@ -2,7 +2,7 @@ NAME = RPN
 
 CXX = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 CPPFILS = main.cpp RPN.cpp
 
