@@ -138,9 +138,12 @@ void SortData()
 	start = get_current_time();
 	SecondData = splitList(SecondData);
 	end = get_current_time();
+	int i = 0;
 	std::cout << "After:  " ;
-	for (std::list<int>::iterator it = SecondData.begin(); it != SecondData.end(); it++)
+	for (std::list<int>::iterator it = SecondData.begin(); it != SecondData.end() && i++ < 5; it++)
 		std::cout << ' ' << *it;
+	if (SecondData.size() > 5)
+		std::cout << " [...]";
 	std::cout << '\n';
 	std::cout << "Time to process a range of " << SecondData.size() <<
 		" elements with std::list : " << (end - start) / 1000 << " us\n";
@@ -161,15 +164,18 @@ void fillData(int ac, char **av)
 		number = strtod(av[i], &str);
 		if (*str || number < 0 || number > 2147483647)
 		{
-			std::cerr << "Error: invalide number .\n";
+			std::cerr << "Error\n";
 			exit(-1);
 		}
 		FirstData.push(number);
 		SecondData.push_back(number);
 	}
 	std::cout << "Before: " ;
-	for (std::list<int>::iterator it = SecondData.begin(); it != SecondData.end(); it++)
+	int i= 0;
+	for (std::list<int>::iterator it = SecondData.begin(); it != SecondData.end() && i++ < 5; it++)
 		std::cout << ' ' << *it;
+	if (SecondData.size() > 5)
+		std::cout << " [...]";
 	std::cout << '\n';
 	SortData();
 }
