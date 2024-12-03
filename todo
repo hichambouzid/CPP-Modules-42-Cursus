@@ -39,3 +39,7 @@ create a function can remplace addnumber, by function containe range of numbers 
 - Check if date valide by spliting the string .
 -  use function check the month and day.
 -function search for operatores and store theme.
+
+
+- coding merge insersion sort first can take two template container sort theme and return a new generated container.
+- sort merge for list and queue  containers 
