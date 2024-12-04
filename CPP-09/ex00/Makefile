@@ -2,7 +2,7 @@ NAME = btc
 
 CXX = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CFILS = main.cpp  BitcoinExchange.cpp
 

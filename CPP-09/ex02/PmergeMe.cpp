@@ -1,11 +1,11 @@
 #include "PmergeMe.hpp"
 
-std::queue<int> FirstData;
-std::list<int> SecondData;
+std::queue<double> FirstData;
+std::list<double> SecondData;
 
-std::queue<int> mergeSortQueue(std::queue<int> &left, std::queue<int> &right)
+std::queue<double> mergeSortQueue(std::queue<double> &left, std::queue<double> &right)
 {
-	std::queue<int> result;
+	std::queue<double> result;
 
 	while (!left.empty() && !right.empty())
 	{
@@ -36,9 +36,9 @@ std::queue<int> mergeSortQueue(std::queue<int> &left, std::queue<int> &right)
 	return (result);
 }
 
-std::queue<int> splitQueue(std::queue<int> &mainq)
+std::queue<double> splitQueue(std::queue<double> &mainq)
 {
-	std::queue<int> left, right;
+	std::queue<double> left, right;
 	size_t lenght = mainq.size(); 
 	if (lenght <= 1)
 		return (mainq);
@@ -75,9 +75,9 @@ long	get_current_time(void)
 }
 
 
-std::list<int> mergeSortList(std::list<int> &left, std::list<int> &right)
+std::list<double> mergeSortList(std::list<double> &left, std::list<double> &right)
 {
-	std::list<int> result;
+	std::list<double> result;
 
 	// std::cout << "left size: " << left.size() << " right size: " << right.size() << '\n';
 	while (!left.empty() && !right.empty())
@@ -109,9 +109,9 @@ std::list<int> mergeSortList(std::list<int> &left, std::list<int> &right)
 	return (result);
 }
 
-std::list<int> splitList(std::list<int> &mainq)
+std::list<double> splitList(std::list<double> &mainq)
 {
-	std::list<int> left, right;
+	std::list<double> left, right;
 	size_t lenght = mainq.size(); 
 	if (lenght <= 1)
 		return (mainq);
@@ -140,7 +140,7 @@ void SortData()
 	end = get_current_time();
 	int i = 0;
 	std::cout << "After:  " ;
-	for (std::list<int>::iterator it = SecondData.begin(); it != SecondData.end() && i++ < 5; it++)
+	for (std::list<double>::iterator it = SecondData.begin(); it != SecondData.end() && i++ < 5; it++)
 		std::cout << ' ' << *it;
 	if (SecondData.size() > 5)
 		std::cout << " [...]";
@@ -150,6 +150,13 @@ void SortData()
 	start = get_current_time();
 	FirstData = splitQueue(FirstData);
 	end = get_current_time();
+	std::cout << "After: " ;
+	while (!FirstData.empty())
+	{
+		std::cout  << " " << FirstData.front();
+		FirstData.pop();
+	}
+	std::cout << "\n";
 	std::cout << "Time to process a range of " << FirstData.size() <<
 		" elements with std::queue : " << (end - start) / 1000 << " us\n";
 }
@@ -172,10 +179,11 @@ void fillData(int ac, char **av)
 	}
 	std::cout << "Before: " ;
 	int i= 0;
-	for (std::list<int>::iterator it = SecondData.begin(); it != SecondData.end() && i++ < 5; it++)
+	for (std::list<double>::iterator it = SecondData.begin(); it != SecondData.end() && i++ < 5; it++)
 		std::cout << ' ' << *it;
 	if (SecondData.size() > 5)
 		std::cout << " [...]";
 	std::cout << '\n';
+	std::cout << "----------------------------------------------------------------------------------------\n";
 	SortData();
 }
