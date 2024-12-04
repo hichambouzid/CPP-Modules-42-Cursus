@@ -6,33 +6,44 @@ std::list<double> SecondData;
 std::queue<double> mergeSortQueue(std::queue<double> &left, std::queue<double> &right)
 {
 	std::queue<double> result;
+	std::set<double> unique;
 
 	while (!left.empty() && !right.empty())
 	{
-		if (left.front() > right.front())
+		if (left.front() <= right.front())
 		{
-			result.push(right.front());
+			if (unique.find(left.front()) == unique.end())
+			{
+				result.push(left.front());
+				unique.insert(left.front());
+			}
+				left.pop();
+		}
+		else
+		{
+			if (unique.find(right.front()) == unique.end())
+			{
+				result.push(right.front());
+				unique.insert(right.front());
+			}
 			right.pop();
 		}
-		else
-		{
-			result.push(left.front());
-			left.pop();
-		}
 	}
-	while(!left.empty() || !right.empty())
-	{
-		if (!left.empty())
-		{
-			result.push(left.front());
-			left.pop();
-		}
-		else
-		{
-			result.push(right.front());
-			right.pop();		
-		}
-	}
+while (!left.empty()) {
+        if (unique.find(left.front()) == unique.end()) {
+            result.push(left.front());
+            unique.insert(left.front());
+        }
+        left.pop();
+    }
+
+    while (!right.empty()) {
+        if (unique.find(right.front()) == unique.end()) {
+            result.push(right.front());
+            unique.insert(right.front());
+        }
+        right.pop();
+    }
 	return (result);
 }
 
@@ -78,34 +89,45 @@ long	get_current_time(void)
 std::list<double> mergeSortList(std::list<double> &left, std::list<double> &right)
 {
 	std::list<double> result;
+	std::set<double> unique;
 
 	// std::cout << "left size: " << left.size() << " right size: " << right.size() << '\n';
 	while (!left.empty() && !right.empty())
 	{
-		if (left.front() > right.front())
+		if (left.front() <= right.front())
 		{
-			result.push_back(right.front());
+			if (unique.find(left.front()) == unique.end())
+			{
+				result.push_back(left.front());
+				unique.insert(left.front());
+			}
+				left.pop_front();
+		}
+		else
+		{
+			if (unique.find(right.front()) == unique.end())
+			{
+				result.push_back(right.front());
+				unique.insert(right.front());
+			}
 			right.pop_front();
 		}
-		else
-		{
-			result.push_back(left.front());
-			left.pop_front();
-		}
 	}
-	while(!left.empty() || !right.empty())
-	{
-		if (!left.empty())
-		{
-			result.push_back(left.front());
-			left.pop_front();
-		}
-		else
-		{
-			result.push_back(right.front());
-			right.pop_front();		
-		}
-	}
+while (!left.empty()) {
+        if (unique.find(left.front()) == unique.end()) {
+            result.push_back(left.front());
+            unique.insert(left.front());
+        }
+        left.pop_front();
+    }
+
+    while (!right.empty()) {
+        if (unique.find(right.front()) == unique.end()) {
+            result.push_back(right.front());
+            unique.insert(right.front());
+        }
+        right.pop_front();
+    }
 	return (result);
 }
 
@@ -151,11 +173,11 @@ void SortData()
 	FirstData = splitQueue(FirstData);
 	end = get_current_time();
 	std::cout << "After: " ;
-	while (!FirstData.empty())
-	{
-		std::cout  << " " << FirstData.front();
-		FirstData.pop();
-	}
+	// while (!FirstData.empty())
+	// {
+	// 	std::cout  << " " << FirstData.front();
+	// 	FirstData.pop();
+	// }
 	std::cout << "\n";
 	std::cout << "Time to process a range of " << FirstData.size() <<
 		" elements with std::queue : " << (end - start) / 1000 << " us\n";
@@ -184,6 +206,5 @@ void fillData(int ac, char **av)
 	if (SecondData.size() > 5)
 		std::cout << " [...]";
 	std::cout << '\n';
-	std::cout << "----------------------------------------------------------------------------------------\n";
 	SortData();
 }

@@ -11,7 +11,7 @@
 #include <time.h>
 #include <unistd.h>
 # include <sys/time.h>
-
+#include <set>
 
 std::queue<int> mergeSortQueue(std::queue<int> &left, std::queue<int> &right);
 std::queue<int> splitQueue(std::queue<int> &mainq);
